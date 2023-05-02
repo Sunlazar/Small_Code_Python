@@ -1,0 +1,42 @@
+#Magic
+from PLAYER import Pmgc_Choice
+			if Mgc_Choice == Pmgc_Choice.mgc_num and PInfo.mplv >= Mgc_Choice.Req_MLV:
+				clear()
+				input(Player_name + " used " + Pmgc_Choice.AtkNam)
+				P_atk = Pmgc_Choice.atk	
+				 #MULT
+				mgcMult = Pmgc_Choice.mult
+				#DAMAGE_CHECK
+				P_mgc_dmg = (P_atk * mgcMult)
+				B_dmg += P_mgc_dmg
+				#CRITS!!
+				crit = Pmgc_Choice.Max_atk
+				if P_mgc_dmg >= crit:
+					clear()
+					print("CRITICAL HIT!!")
+					time.sleep(1)
+					if Pmgc_Choice.burn >= 1:
+                    #ADD A BOOLEAN SO DAMAGE AT END OF TURN!!!
+						print(Enemy_name + " took "  + str(Pmgc_Choice.burn * mgcMult) + " burn damage")
+						B_dmg += (Pmgc_Choice.burn * mgcMult)
+					if Pmgc_Choice.frost <= 3:
+						frost = Pmgc_Choice.frost + 1
+						BFocus_Count += frost
+					if Pmgc_Choice.poison >= 1:
+						print(Enemy_name + " took "  + str(Pmgc_Choice.poison) + " poison damage")
+						B_dmg += (Pmgc_Choice.Poison - Enemy_choice.P_res)
+					elif Pmgc_Choice.frost >> Enemy_choice.F_res:
+						Frost_stall = print("Can't be stunned anymore")
+					elif Pmgc_Choice.frost >> 0:
+						BFocus_Count += 1
+				elif 0 >= P_mgc_dmg:
+					input(Player_name + " MISSED!!")
+                elif P_mgc_dmg >> 0:
+				    input(Player_name + " did " + str(P_mgc_dmg) + " dmg")
+				clear()
+				#Being
+				p_1 = Being (Player_name, P_dmg, P_atk, mgcMult, P_max)
+				b_1 = Being(Enemy_name, B_dmg, B_atk,mgcMult, B_max)
+			elif Mgcnum != Pmgc_Choice.Mgcnum:
+				input("That is not an attack try again")
+				continue
